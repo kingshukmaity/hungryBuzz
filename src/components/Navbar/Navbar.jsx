@@ -6,7 +6,7 @@ import { storeContext } from "../../context/StoreContext";
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
-  const {getTotalCartAmount} = useContext(storeContext)
+  const { getTotalCartAmount } = useContext(storeContext);
   return (
     <div className="navbar">
       <Link to="/">
@@ -20,6 +20,7 @@ const Navbar = ({ setShowLogin }) => {
         >
           Home
         </Link>
+
         <a
           href="#explore-menu"
           onClick={() => setMenu("menu")}
@@ -27,6 +28,7 @@ const Navbar = ({ setShowLogin }) => {
         >
           Menu
         </a>
+
         <a
           href="#app-download"
           onClick={() => setMenu("mobile-app")}
@@ -48,7 +50,7 @@ const Navbar = ({ setShowLogin }) => {
           <Link to="/cart">
             <img src={assets.basket_icon} alt="" />
           </Link>
-          <div className={getTotalCartAmount()===0 ?"": "dot"}></div>
+          <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
         </div>
         <button onClick={() => setShowLogin(true)}>sign in</button>
       </div>
